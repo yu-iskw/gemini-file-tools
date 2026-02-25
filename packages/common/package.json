@@ -1,13 +1,23 @@
 {
   "name": "@typescript-template/common",
   "version": "1.0.0",
-  "description": "Common utilities and types for the TypeScript template project.",
-  "keywords": [],
-  "license": "ISC",
-  "author": "",
+  "description": "Shared Gemini Files runtime, types, errors, and safety policy.",
+  "keywords": [
+    "gemini",
+    "mcp",
+    "cli",
+    "safety"
+  ],
+  "license": "Apache-2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc"
+  },
+  "dependencies": {
+    "@google/genai": "^1.42.0"
   }
 }
