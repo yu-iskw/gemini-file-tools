@@ -1,0 +1,27 @@
+{
+  "name": "@gemini-file-tools/gemini-files-cli",
+  "version": "0.1.0",
+  "description": "CLI for Gemini Files API.",
+  "keywords": [
+    "gemini",
+    "files",
+    "cli"
+  ],
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "gemini-files": "dist/bin.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@typescript-template/common": "workspace:*",
+    "commander": "^14.0.3"
+  }
+}

@@ -1,8 +1,9 @@
-import { describe, it, expect } from 'vitest';
-import { greet } from './index';
+import { describe, expect, it } from 'vitest';
 
-describe('greet', () => {
-  it('should return a greeting message', () => {
-    expect(greet('World')).toBe('Hello, World!');
+import { resolveSafetyMode } from './index';
+
+describe('common exports', () => {
+  it('exposes shared runtime', () => {
+    expect(resolveSafetyMode({})).toBe('read-only');
   });
 });

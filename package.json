@@ -1,5 +1,5 @@
 {
-  "name": "typescript-template",
+  "name": "gemini-files-tools",
   "version": "1.0.0",
   "private": true,
   "description": "",
@@ -9,6 +9,8 @@
   "main": "index.js",
   "scripts": {
     "build": "pnpm --recursive build",
+    "dev:cli": "pnpm --filter @gemini-file-tools/gemini-files-cli dev",
+    "dev:mcp": "pnpm --filter @gemini-file-tools/gemini-files-mcp dev",
     "format": "pnpm format:trunk",
     "format:all": "pnpm format:trunk-all",
     "format:eslint": "eslint . --fix",
@@ -21,10 +23,12 @@
     "lint:security": "trunk check --all --scope security",
     "lint:trunk": "trunk check",
     "lint:trunk-all": "trunk check --all",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:integration": "node -e \"const key=process.env.GEMINI_API_KEY; if(!key||key.trim().length===0){console.log('Skipping integration tests: GEMINI_API_KEY is not set'); process.exit(0);} const { spawnSync } = require('node:child_process'); const result = spawnSync('vitest', ['run', 'packages/common/src/**/*.integration.test.ts'], { stdio: 'inherit', shell: process.platform === 'win32' }); process.exit(result.status ?? 1);\""
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "@types/node": "^24.9.1",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
