@@ -27,7 +27,7 @@
     "test:integration": "node -e \"const key=process.env.GEMINI_API_KEY; if(!key||key.trim().length===0){console.log('Skipping integration tests: GEMINI_API_KEY is not set'); process.exit(0);} const { spawnSync } = require('node:child_process'); const result = spawnSync('vitest', ['run', 'packages/common/src/**/*.integration.test.ts'], { stdio: 'inherit', shell: process.platform === 'win32' }); process.exit(result.status ?? 1);\""
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^9.39.3",
     "@types/node": "^24.9.1",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
